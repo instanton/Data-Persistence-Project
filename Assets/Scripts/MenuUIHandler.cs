@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -14,10 +15,13 @@ using UnityEditor;
 
 public class MenuUIHandler : MonoBehaviour
 {
+    public TextMeshProUGUI playerNameText;
+    //public string playerName;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Player Name: " + playerNameText.text);
     }
 
     // Update is called once per frame
@@ -40,5 +44,12 @@ public class MenuUIHandler : MonoBehaviour
 #else
         Application.Quit(); // original code to quit Unity player
 #endif
+    }
+
+    public void SetPlayerName()
+    {
+        Debug.Log("Player Name: " + playerNameText.text);
+
+        GameManager.Instance.playerName = playerNameText.text;
     }
 }
