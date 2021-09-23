@@ -16,12 +16,11 @@ using UnityEditor;
 public class MenuUIHandler : MonoBehaviour
 {
     public TextMeshProUGUI playerNameText;
-    //public string playerName;
     
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Player Name: " + playerNameText.text);
+        //Debug.Log("Player Name: " + playerNameText.text);
     }
 
     // Update is called once per frame
@@ -37,7 +36,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void Exit()
     {
-        //GameManager.Instance.SaveColor();
+        GameManager.Instance.SaveHighScores();
 
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
@@ -48,7 +47,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void SetPlayerName()
     {
-        Debug.Log("Player Name: " + playerNameText.text);
+        //Debug.Log("Player Name: " + playerNameText.text);
 
         GameManager.Instance.playerName = playerNameText.text;
     }
